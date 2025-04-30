@@ -30,7 +30,7 @@ jobs:
 
       - name: Run build pipeline
         run: |
-          npm run build
+          npm run all
 
       - name: Add generated files
         run: |
