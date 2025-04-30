@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import { exec } from '@actions/exec';
 
-async function run(): Promise<void> {
+export default async  function run(): Promise<void> {
   try {
     // Get inputs
     const nexusUrl = core.getInput('nexus-url', { required: true });
