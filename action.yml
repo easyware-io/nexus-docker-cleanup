@@ -1,0 +1,28 @@
+name: easyware.io/nexus-docker-cleanup
+description: Deletes Docker images from a Nexus repository older than a specified period, excluding protected tags
+inputs:
+  nexus-url:
+    description: URL of the Nexus server (e.g., http://nexus.example.com)
+    required: true
+  nexus-username:
+    description: Nexus username with read and delete permissions
+    required: true
+  nexus-password:
+    description: Nexus password
+    required: true
+  nexus-repository:
+    description: Name of the Nexus Docker repository (e.g., docker-hosted)
+    required: true
+  protected-tags:
+    description: Comma-separated list of tags to protect (supports wildcards, e.g., latest,prod-*,release-*)
+    required: true
+  retention-days:
+    description: 'Number of days to retain images (default: 30)'
+    required: false
+    default: '30'
+runs:
+  using: node20
+  main: dist/index.js
+branding:
+  icon: shield
+  color: orange
